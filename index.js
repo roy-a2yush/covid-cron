@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 6000
 
 const server = app.listen(
     PORT,
-    cron.schedule('* * * * *', function() {
+    cron.schedule('0 0 * * *', function() {
         console.log('resetEmailCron running...')
         if(shell.exec("node sayHello.js").code !== 0) {
             console.log("Something went wrong")
